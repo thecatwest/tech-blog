@@ -1,0 +1,17 @@
+{{#each post}}
+<div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">
+              By
+              {{user.username}}
+              on
+              {{format_date created_at}}
+            </p>
+            <a href="/posts/{{id}}">Curious minds inquire within</a>
+                    </div>
+               </div>
+          </div>
+     </div>
+{{/each}}

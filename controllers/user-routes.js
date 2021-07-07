@@ -75,7 +75,7 @@ router.get("/post/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "title", "post-content", "created_at"],
+    attributes: ["id", "title", "post_content", "created_at"],
     include: [
       {
         model: Comment,
@@ -158,7 +158,7 @@ router.get("/post/:id", (req, res) => {
             plain: true,
           });
 
-          res.render("edit-blog", usersData);
+          res.render("edit-post", usersData);
         })
         .catch((err) => {
           console.log(err);

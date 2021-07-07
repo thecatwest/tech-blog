@@ -1,0 +1,46 @@
+<h2 class="center-align">
+  Greetings and Salutations from the Ministry of Magic:
+  {{username}}
+  ! <i class="hat-wizard"></i>
+</h2>
+<div class="row d-flex justify-content-center">
+     <div class="col-sm-6">
+    <button class="btn btn-warning" id="new-post-button">
+      <i class="material-icons left">
+        note add
+      </i>
+      New Muggle Blog Post
+    </button>
+  </div>
+</div>
+<h4>
+  Your Muggle Blog Posts:
+</h4>
+<div class="row">
+  {{#each post}}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">
+              By
+              {{user.username}}
+              on
+              {{format_date created_at}}
+            </p>
+            <a href="/posts/{{id}}">
+              View Post
+            </a>
+            <a href="/posts/edit/{{id}}">
+              Edit Post
+            </a>
+            <a id="delete-post-button" value={{id}}>
+              Delete Post
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+<script src="/javascript/dashboard.js"></script>
